@@ -1,6 +1,9 @@
-// if define and endif is used to create a header
+// if, define and endif are binded all together to create a header
 #ifndef LED_H
 #define LED_H
+
+#include <Arduino.h>
+
 class Led
 {
   private:

@@ -11,6 +11,11 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(button.readState());
+  if (button.isPressed()) {
+    Serial.println("Button is pressed");
+  }
+  else {
+    Serial.println("Button is not pressed");
+  }
   delay(100);
 }

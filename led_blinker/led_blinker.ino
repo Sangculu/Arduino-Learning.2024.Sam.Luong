@@ -1,9 +1,17 @@
-void setup() {
-  // put your setup code here, to run once:
+#include "Led.h"
+#include "LedBlinker.h"
 
+#define LED_PIN 10
+
+Led led(LED_PIN);
+LedBlinker ledBlinker(led);
+
+void setup() {
+  ledBlinker.initLed();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  led.toggle();
+  delay(500);
 
 }

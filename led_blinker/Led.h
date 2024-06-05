@@ -8,6 +8,7 @@ class Led
 {
   private:
   	byte pin;
+    byte state;
   public:
   Led() {} //do not use
   Led(byte pin); // This is a constructor and the one above as well
@@ -19,6 +20,11 @@ class Led
 
   void on();
   void off();
+
+  // power on/off depends on the previous state
+  void toggle();
+
+  bool isPoweredOn();
 };
 
 #endif

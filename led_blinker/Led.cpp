@@ -21,9 +21,25 @@ void Led::init(byte defaultState)
 }  
 void Led::on()
 {
+  state = HIGH;
   digitalWrite(pin, HIGH);
 }
 void Led::off()
-{
+{ 
+  state = LOW;
   digitalWrite(pin, LOW);
+}
+
+bool Led::isPoweredOn() {
+  return (state == HIGH);
+}
+
+void Led::toggle()
+{
+  if (isPoweredOn()) {
+    off();
+  }
+  else {
+    on();
+  }
 }

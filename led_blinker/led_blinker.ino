@@ -1,17 +1,27 @@
 #include "Led.h"
 #include "LedBlinker.h"
 
-#define LED_PIN 10
+#define RED_LED_PIN 11
+#define YELLOW_LED_PIN 10
+#define GREEN_LED_PIN 9
 
-Led led(LED_PIN);
-LedBlinker ledBlinker(led);
+Led redLed(RED_LED_PIN);
+Led yellowLed(YELLOW_LED_PIN);
+Led greenLed(GREEN_LED_PIN);
+
+LedBlinker redLedBlinker(redLed, 200);
+LedBlinker yellowLedBlinker(yellowLed, 450);
+LedBlinker greenLedBlinker(greenLed, 900);
 
 void setup() {
-  ledBlinker.initLed();
+  redLedBlinker.initLed();
+  yellowLedBlinker.initLed();
+  greenLedBlinker.initLed();
 }
 
 void loop() {
-  led.toggle();
-  delay(500);
+  redLedBlinker.update();
+  yellowLedBlinker.update();
+  greenLedBlinker.update();
 
 }

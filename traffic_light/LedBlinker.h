@@ -16,7 +16,7 @@ private:
 public:
   LedBlinker() {} //Do not use
   LedBlinker(Led &led);
-  LedBlinker(Led, unsigned long blinkDelay);
+  LedBlinker(Led &led, unsigned long blinkDelay);
 
   void initLed();
   void update();

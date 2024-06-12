@@ -6,17 +6,16 @@
 #include "Led.h"
 #include "LedBlinker.h"
 #include "PushButton.h"
-#include "Potentiometer.h"
+
 
 class TrafficLight
 {
 private:
-  Led redLed:
-  led yellowLed:
-  led greenLed;
+  Led redLed;
+  Led yellowLed;
+  Led greenLed;
   LedBlinker greenLedBlinker;
   PushButton button;
-  Potentiometer potentiometer;
 
   byte ledsBrightness;
 
@@ -43,9 +42,8 @@ public:
   TrafficLight() {} // Do not use
   TrafficLight(
     Led &redLed, Led &yellowLed, Led &greenLed, 
-    LedBlinker &greenLedBlinker, PushButton &button, 
-    Potentiometer &potentiometer
-  );
+    LedBlinker &greenLedBlinker, PushButton &button);
+
 
   void init();
 
